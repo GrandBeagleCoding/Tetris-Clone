@@ -86,10 +86,23 @@ public class GameScript1 : MonoBehaviour
         currentScore += scoreFourLine;
     }
 
+    public void IncreaseDifficulty()
+    {
+        if(currentScore > 500 && currentScore !> 1000)
+        {
+            FindObjectOfType<TetrisBlockPlayer1>().fallTime = 0.7f;
+        }
+        if(currentScore > 1000 && currentScore > 500)
+        {
+            FindObjectOfType<TetrisBlockPlayer1>().fallTime = 0.5f;
+        }
+    }
 
     public void UpdateUI()
     {
         hud_score_player1.text = currentScore.ToString();
+
+        IncreaseDifficulty();
     }
 
     public void CheckForLines()// checks if tetrimino Objects form a line
