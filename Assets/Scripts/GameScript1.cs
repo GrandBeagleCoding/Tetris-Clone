@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameScript1 : MonoBehaviour
 {
     
@@ -36,6 +36,26 @@ public class GameScript1 : MonoBehaviour
     {
         UpdateScore();
         UpdateUI();
+    }
+
+    //public bool CheckIsAboveGrid()
+    //{
+    //    for (int i = 0; i < width; i++)
+    //    {
+    //        foreach ()
+    //        {
+    //            if (pos.y > height - 1)
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
+    //    return false;
+    //}
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     void PlayLinecleared()
@@ -169,6 +189,7 @@ public class GameScript1 : MonoBehaviour
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
             grid[roundedX, roundedY] = children;
+
 
         }
 

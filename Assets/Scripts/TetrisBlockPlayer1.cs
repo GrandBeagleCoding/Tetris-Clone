@@ -83,6 +83,11 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
                 CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
                 PlayLandAudio();
 
+                //if(CheckIsAboveGrid(this))
+                //{
+                //    GameOver();
+                //}
+
                 this.enabled = false;
                 FindObjectOfType<SpawnTetriminoes>().NewTetiminoe();
 
