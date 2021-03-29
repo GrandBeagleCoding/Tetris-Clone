@@ -18,13 +18,13 @@ public class GameScript1 : MonoBehaviour
     public int scoreThreeLine = 300;
     public int scoreFourLine = 1400;
 
+    //Audio
     [SerializeField] private AudioClip clearLine;
     public AudioSource audioSource;
 
+    //HUD- Score
     public TMPro.TextMeshProUGUI hud_score_player1;
-
     private int currentScore = 0;
-
     private static int numberOfRowsThisTurn = 0;
 
     public void Start()

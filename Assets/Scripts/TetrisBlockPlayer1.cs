@@ -88,7 +88,7 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
                 //    GameOver();
                 //}
 
-                this.enabled = false;
+                enabled = false;
                 FindObjectOfType<SpawnTetriminoes>().NewTetiminoe();
 
             }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnTetriminoes1 : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] Tetriminoes_p2;
+    [SerializeField] private GameObject[] Tetriminoe_p2;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class SpawnTetriminoes1 : MonoBehaviour
     public void NewTetiminoe_p2()
     {
 
-        Instantiate(Tetriminoes_p2[Random.Range(0, Tetriminoes_p2.Length)], transform.position, Quaternion.identity);
+        Instantiate(Tetriminoe_p2[Random.Range(0, Tetriminoe_p2.Length)], transform.position, Quaternion.identity);
 
     }
 }

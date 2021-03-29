@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 270144975169928029}
   m_Layer: 7
   m_Name: S_Tetriminoe
-  m_TagString: Tetriminoe1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,6 @@ MonoBehaviour:
   scoreTwoLine: 100
   scoreThreeLine: 300
   scoreFourLine: 1400
-  Tetriminoe1: {fileID: 0}
   clearLine: {fileID: 8300000, guid: 962b41dea0234f547969f9082c613b85, type: 3}
   audioSource: {fileID: 0}
   hud_score_player1: {fileID: 4008771051071772046, guid: 3c800d2dc23017b468f17673788c994b, type: 3}

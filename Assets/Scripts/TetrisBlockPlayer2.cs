@@ -71,7 +71,7 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
                 CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
                 PlayLandAudio();
 
-                this.enabled = false;
+                enabled = false;
                 FindObjectOfType<SpawnTetriminoes1>().NewTetiminoe_p2();
 
             }
