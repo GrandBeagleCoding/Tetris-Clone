@@ -385,6 +385,7 @@ MonoBehaviour:
   hud_score_player1: {fileID: 4008771051071772046, guid: 3c800d2dc23017b468f17673788c994b, type: 3}
   rotationPoint: {x: 0.5, y: 0.5, z: 0}
   fallTime: 0.8
+  Tetrimino: {fileID: 1149029591530081050}
   moveSound: {fileID: 8300000, guid: 611fbea60c0cef84f9f01fc5a59c7818, type: 3}
   rotateSound: {fileID: 8300000, guid: 352f545a5d1c68a42be8eea1a7cf0137, type: 3}
   landSound: {fileID: 8300000, guid: 5ddecbc63c324a142a8b480c44afc1b4, type: 3}

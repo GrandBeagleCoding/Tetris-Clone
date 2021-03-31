@@ -13,10 +13,10 @@ public class GameScript1 : MonoBehaviour
     private static Transform[,] grid = new Transform[width, height];
     
     //Punkte
-    public int scoreOneLine = 50;
-    public int scoreTwoLine = 100;
-    public int scoreThreeLine = 300;
-    public int scoreFourLine = 1400;
+    private int scoreOneLine = 50;
+    private int scoreTwoLine = 100;
+    private int scoreThreeLine = 300;
+    private int scoreFourLine = 1400;
 
     //Audio
     [SerializeField] private AudioClip clearLine;
@@ -38,20 +38,23 @@ public class GameScript1 : MonoBehaviour
         UpdateUI();
     }
 
-    //public bool CheckIsAboveGrid()
-    //{
-    //    for (int i = 0; i < width; i++)
-    //    {
-    //        foreach ()
-    //        {
-    //            if (pos.y > height - 1)
-    //            {
-    //                return true;
-    //            }
-    //        }
-    //    }
-    //    return false;
-    //}
+    public bool CheckIsAboveGrid(TetrisBlockPlayer1 Tetrimino)
+    {
+        
+        for (int i = 0; i < width; ++i)
+        {
+            foreach (Transform mino in Tetrimino.transform)
+            {
+                Vector2 pos = mino.position;
+
+                if (pos.y > height - 2)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public void GameOver()
     {
@@ -195,8 +198,8 @@ public class GameScript1 : MonoBehaviour
 
     }
 
-    public bool ValidMove()
-    {
+   public bool ValidMove()
+   {
 
         foreach (Transform children in transform)
         {
@@ -212,6 +215,6 @@ public class GameScript1 : MonoBehaviour
                 return false;
         }
         return true;
-    }
+   }
 
 }

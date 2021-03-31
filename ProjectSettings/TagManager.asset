@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tetriminoe1
-  - Tetriminoe2
+  - CurrentActiveTetriminoe
+  - CurrentSavedTetriminoe
   layers:
   - Default
   - TransparentFX

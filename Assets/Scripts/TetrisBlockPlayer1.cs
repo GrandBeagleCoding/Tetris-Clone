@@ -10,6 +10,7 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
     public Vector3 rotationPoint; // Vector für Rotation der Minos
     private float previousTime;
     public float fallTime = 0.8f; //Zeit die verstreicht bis ein Mino sich nach unten bewegt
+    public TetrisBlockPlayer1 Tetrimino;
 
     //SoundClips
     public AudioClip moveSound;
@@ -83,14 +84,14 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
                 CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
                 PlayLandAudio();
 
-                //if(CheckIsAboveGrid(this))
-                //{
-                //    GameOver();
-                //}
+                
 
                 enabled = false;
                 FindObjectOfType<SpawnTetriminoes>().NewTetiminoe();
-
+                if(CheckIsAboveGrid(Tetrimino))
+                {
+                    GameOver();
+                }
             }
             previousTime = Time.time;
 

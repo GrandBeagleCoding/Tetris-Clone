@@ -130,15 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542b344b50eb5b74fb258fc1e74f9119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreOneLine: 50
-  scoreTwoLine: 100
-  scoreThreeLine: 300
-  scoreFourLine: 1400
   hud_score_player2: {fileID: 0}
   clearLine: {fileID: 8300000, guid: 962b41dea0234f547969f9082c613b85, type: 3}
   audioSource: {fileID: 0}
   rotationPoint: {x: 0.5, y: 0.5, z: 0}
   fallTime: 0.8
+  Tetrimino: {fileID: -6967002700385367430}
   moveSound: {fileID: 8300000, guid: 611fbea60c0cef84f9f01fc5a59c7818, type: 3}
   rotateSound: {fileID: 8300000, guid: 352f545a5d1c68a42be8eea1a7cf0137, type: 3}
   landSound: {fileID: 8300000, guid: 5ddecbc63c324a142a8b480c44afc1b4, type: 3}

@@ -9,12 +9,14 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
     public Vector3 rotationPoint; // Vector für Rotation der Minos
     private float previousTime;
     public float fallTime = 0.8f; //Zeit die verstreicht bis ein Mino sich nach unten bewegt
+    public TetrisBlockPlayer2 Tetrimino;
+
 
     //SoundClips
     public AudioClip moveSound;
     public AudioClip rotateSound;
     public AudioClip landSound;
-
+  
     void PlayMoveAudio()
     {
         audioSource.PlayOneShot(moveSound, 1.0f);
@@ -73,7 +75,10 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
 
                 enabled = false;
                 FindObjectOfType<SpawnTetriminoes1>().NewTetiminoe_p2();
-
+                if (CheckIsAboveGrid(Tetrimino))
+                {
+                    GameOver();
+                }
             }
             previousTime = Time.time;
 

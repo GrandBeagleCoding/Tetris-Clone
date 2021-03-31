@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameScript2 : MonoBehaviour
 {
     
-   
+    //Spielfeld Definition
     public static int height = 20;
     public static int width = 10;
+
+    //Gridd Definition
     private static Transform[,] grid = new Transform[width, height];
-    public int scoreOneLine = 50;
-    public int scoreTwoLine = 100;
-    public int scoreThreeLine = 300;
-    public int scoreFourLine = 1400;
+    
+    //Score Definition
+    private int scoreOneLine = 50;
+    private int scoreTwoLine = 100;
+    private int scoreThreeLine = 300;
+    private int scoreFourLine = 1400;
 
     public TMPro.TextMeshProUGUI hud_score_player2;
 
@@ -32,6 +37,28 @@ public class GameScript2 : MonoBehaviour
     {
         UpdateScore();
         UpdateUI();
+    }
+
+    public bool CheckIsAboveGrid(TetrisBlockPlayer2 Tetrimino)
+    {
+
+        for (int i = 0; i < width; ++i)
+        {
+            foreach (Transform mino in Tetrimino.transform)
+            {
+                Vector2 pos = mino.position;
+
+                if (pos.y > height - 2)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     void PlayLinecleared()

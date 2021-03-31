@@ -7389,7 +7389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc18d71f01dc6a47b5867ebdbd940b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tetriminoes:
+  Tetriminoe:
   - {fileID: 1250477472110301717, guid: 57d30937d88aa5b47a555e83f4540849, type: 3}
   - {fileID: 8791546959452380211, guid: 1500690e0d84a5b48af377ed394a4ef4, type: 3}
   - {fileID: 3462967583412606771, guid: 09c7ef1357e96e743adbd958caed0db4, type: 3}
