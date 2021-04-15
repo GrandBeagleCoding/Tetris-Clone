@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
+public class TetrisBlockPlayer2 : GameScript1 //Script erbt vom Gamescript1
 {
 
     public Vector3 rotationPoint; // Vector für Rotation der Minos
@@ -39,14 +39,14 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.position += new Vector3(-1, 0, 0); // verändert Position um -1 auf der X-Achse
-            if (!ValidMove())
+            if (!ValidMoveP2())
                 transform.position -= new Vector3(-1, 0, 0);
                 PlayMoveAudio();
         }
         else if(Input.GetKeyDown(KeyCode.D))
         {
             transform.position += new Vector3(1, 0, 0); // Verändert Position um +1 auf der X-Achse
-            if (!ValidMove())
+            if (!ValidMoveP2())
                 transform.position -= new Vector3(1, 0, 0);
                 PlayMoveAudio();
         }
@@ -54,7 +54,7 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
         {
             //Rotation der Blöcke um 90 Grad
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-                if (!ValidMove())
+                if (!ValidMoveP2())
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
                 PlayRotateSound();
         }
@@ -66,16 +66,16 @@ public class TetrisBlockPlayer2 : GameScript2 //Script erbt vom Gamescript2
                 PlayMoveAudio();
             }
             transform.position += new Vector3(0, -1, 0);
-            if (!ValidMove())
+            if (!ValidMoveP2())
             {
                 transform.position -= new Vector3(0, -1, 0);
-                AddToGrid();        //Fügt den Block zum Vorhandenen Grid hinzu
-                CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
+                P2AddToGrid();        //Fügt den Block zum Vorhandenen Grid hinzu
+                P2CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
                 PlayLandAudio();
 
                 enabled = false;
                 FindObjectOfType<SpawnTetriminoes1>().NewTetiminoe_p2();
-                if (CheckIsAboveGrid(Tetrimino))
+                if (P2CheckIsAboveGrid(Tetrimino))
                 {
                     GameOver();
                 }

@@ -47,14 +47,14 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-1, 0, 0); // verändert Position um -1 auf der X-Achse
-            if (!ValidMove())
+            if (!ValidMoveP1())
                 transform.position -= new Vector3(-1, 0, 0);
                 PlayMoveAudio();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += new Vector3(1, 0, 0); // Verändert Position um +1 auf der X-Achse
-            if (!ValidMove())
+            if (!ValidMoveP1())
                 transform.position -= new Vector3(1, 0, 0);
                 PlayMoveAudio();
         }
@@ -63,7 +63,7 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
             //Rotation der Blöcke um 90 Grad
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
             
-            if (!ValidMove())
+            if (!ValidMoveP1())
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
                 PlayRotateSound();
         }
@@ -77,18 +77,18 @@ public class TetrisBlockPlayer1 : GameScript1 //Script erbt vom Gamescript1
             {
                 PlayMoveAudio();
             }
-            if (!ValidMove())
+            if (!ValidMoveP1())
             {
                 transform.position -= new Vector3(0, -1, 0);
-                AddToGrid();        //Fügt den Block zum Vorhandenen Grid hinzu
-                CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
+                P1AddToGrid();        //Fügt den Block zum Vorhandenen Grid hinzu
+                P1CheckForLines();    //Überprüft das Vorhandensein von vollen Reihen und führt dies dann in Gamescript1 aus
                 PlayLandAudio();
 
                 
 
                 enabled = false;
                 FindObjectOfType<SpawnTetriminoes>().NewTetiminoe();
-                if(CheckIsAboveGrid(Tetrimino))
+                if(P1CheckIsAboveGrid(Tetrimino))
                 {
                     GameOver();
                 }
